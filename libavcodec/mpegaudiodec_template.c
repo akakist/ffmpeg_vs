@@ -216,7 +216,7 @@ static inline int l1_unscale(int n, int mant, int scale_factor)
     shift   = scale_factor_modshift[scale_factor];
     mod     = shift & 3;
     shift >>= 2;
-    val     = MUL64((int)(mant + (-1U << n) + 1), scale_factor_mult[n-1][mod]);
+//    val     = MUL64((int)(mant + (-1U << n) + 1), scale_factor_mult[n-1][mod]);
     shift  += n;
     /* NOTE: at this point, 1 <= shift >= 21 + 15 */
     return (int)((val + (1LL << (shift - 1))) >> shift);
@@ -909,7 +909,7 @@ static int huffman_decode(MPADecodeContext *s, GranuleDef *g,
                 x = y >> 5;
                 y = y & 0x0f;
                 if (x < 15) {
-                    READ_FLIP_SIGN(g->sb_hybrid + s_index, RENAME(expval_table)[exponent] + x)
+//                    READ_FLIP_SIGN(g->sb_hybrid + s_index, RENAME(expval_table)[exponent] + x)
                 } else {
                     x += get_bitsz(&s->gb, linbits);
                     v  = l3_unscale(x, exponent);
@@ -918,7 +918,7 @@ static int huffman_decode(MPADecodeContext *s, GranuleDef *g,
                     g->sb_hybrid[s_index] = v;
                 }
                 if (y < 15) {
-                    READ_FLIP_SIGN(g->sb_hybrid + s_index + 1, RENAME(expval_table)[exponent] + y)
+//                    READ_FLIP_SIGN(g->sb_hybrid + s_index + 1, RENAME(expval_table)[exponent] + y)
                 } else {
                     y += get_bitsz(&s->gb, linbits);
                     v  = l3_unscale(y, exponent);
@@ -931,7 +931,7 @@ static int huffman_decode(MPADecodeContext *s, GranuleDef *g,
                 y = y & 0x0f;
                 x += y;
                 if (x < 15) {
-                    READ_FLIP_SIGN(g->sb_hybrid + s_index + !!y, RENAME(expval_table)[exponent] + x)
+//                    READ_FLIP_SIGN(g->sb_hybrid + s_index + !!y, RENAME(expval_table)[exponent] + x)
                 } else {
                     x += get_bitsz(&s->gb, linbits);
                     v  = l3_unscale(x, exponent);
@@ -979,7 +979,7 @@ static int huffman_decode(MPADecodeContext *s, GranuleDef *g,
             int v;
             int pos = s_index + idxtab[code];
             code   ^= 8 >> idxtab[code];
-            READ_FLIP_SIGN(g->sb_hybrid + pos, RENAME(exp_table)+exponents[pos])
+//            READ_FLIP_SIGN(g->sb_hybrid + pos, RENAME(exp_table)+exponents[pos])
         }
         s_index += 4;
     }

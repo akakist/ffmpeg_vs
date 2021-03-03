@@ -81,6 +81,8 @@
            Parametric Stereo.
  */
 
+#define  _CRT_SECURE_NO_WARNINGS 1
+
 #include "libavutil/float_dsp.h"
 #include "libavutil/opt.h"
 #include "avcodec.h"

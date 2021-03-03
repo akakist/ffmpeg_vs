@@ -1,0 +1,11 @@
+.vs/
+Release/
+libavcodec/Debug/
+libavcodec/Release/
+libavdevice/Release/
+libavfilter/Release/
+libavformat/Release/
+libavresample/Release/
+libavutil/Release/
+libswresample/Release/
+libswscale/Release/

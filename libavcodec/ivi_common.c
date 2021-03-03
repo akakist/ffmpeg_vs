@@ -545,7 +545,7 @@ static int ivi_decode_coded_blocks(GetBitContext *gb, IVIBandDesc *band,
             lo  = get_vlc2(gb, band->blk_vlc.tab->table, IVI_VLC_BITS, 1);
             hi  = get_vlc2(gb, band->blk_vlc.tab->table, IVI_VLC_BITS, 1);
             /* merge them and convert into signed val */
-            val = IVI_TOSIGNED((hi << 6) | lo);
+//            val = IVI_TOSIGNED((hi << 6) | lo);
         } else {
             if (sym >= 256U) {
                 av_log(avctx, AV_LOG_ERROR, "Invalid sym encountered: %"PRIu32".\n", sym);

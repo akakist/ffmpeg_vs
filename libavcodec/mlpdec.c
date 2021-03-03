@@ -916,7 +916,7 @@ static void filter_channel(MLPDecodeContext *m, unsigned int substr,
     FilterParams *fir = &s->channel_params[channel].filter_params[FIR];
     FilterParams *iir = &s->channel_params[channel].filter_params[IIR];
     unsigned int filter_shift = fir->shift;
-    int32_t mask = MSB_MASK(s->quant_step_size[channel]);
+	int32_t mask = 0;// MSB_MASK(s->quant_step_size[channel]);
 
     memcpy(firbuf, fir->state, MAX_FIR_ORDER * sizeof(int32_t));
     memcpy(iirbuf, iir->state, MAX_IIR_ORDER * sizeof(int32_t));
@@ -1082,7 +1082,8 @@ static int output_data(MLPDecodeContext *m, unsigned int substr,
                                     maxchan,
                                     s->matrix_noise_shift[mat],
                                     m->access_unit_size_pow2,
-                                    MSB_MASK(s->quant_step_size[dest_ch]));
+                       0//             MSB_MASK(s->quant_step_size[dest_ch])
+		);
     }
 
     /* get output buffer */

@@ -50,7 +50,7 @@ static int win32_open(const char *filename_utf8, int oflag, int pmode)
     if (!filename_w)
         goto fallback;
 
-    fd = _wsopen(filename_w, oflag, SH_DENYNO, pmode);
+    //fd = _wsopen(filename_w, oflag, SH_DENYNO, pmode);
     av_freep(&filename_w);
 
     if (fd != -1 || (oflag & O_CREAT))
@@ -58,7 +58,7 @@ static int win32_open(const char *filename_utf8, int oflag, int pmode)
 
 fallback:
     /* filename may be in CP_ACP */
-    return _sopen(filename_utf8, oflag, SH_DENYNO, pmode);
+	return 0;// _sopen(filename_utf8, oflag, SH_DENYNO, pmode);
 }
 #define open win32_open
 #endif

@@ -135,12 +135,6 @@
     <ClCompile Include="murmur3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="opencl.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="opencl_internal.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="opt.c">
       <Filter>Source Files</Filter>
     </ClCompile>

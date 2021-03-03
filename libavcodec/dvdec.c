@@ -239,7 +239,7 @@ static void dv_decode_ac(GetBitContext *gb, BlockInfo *mb, int16_t *block)
         if (re_index + vlc_len > last_index) {
             /* should be < 16 bits otherwise a codeword could have been parsed */
             mb->partial_bit_count  = last_index - re_index;
-            mb->partial_bit_buffer = re_cache & ~(-1u >> mb->partial_bit_count);
+//            mb->partial_bit_buffer = re_cache & ~(-1u >> mb->partial_bit_count);
             re_index               = last_index;
             break;
         }

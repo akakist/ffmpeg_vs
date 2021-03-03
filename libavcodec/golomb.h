@@ -205,8 +205,10 @@ static inline int get_se_golomb(GetBitContext *gb)
         LAST_SKIP_BITS(re, gb, 32 - log);
         CLOSE_READER(re, gb);
 
-        if (buf & 1)
-            buf = -(buf >> 1);
+		if (buf & 1)
+		{
+		//	buf = -(buf >> 1);
+		}
         else
             buf = (buf >> 1);
 
@@ -220,8 +222,10 @@ static inline int get_se_golomb_long(GetBitContext *gb)
 
     if (buf & 1)
         buf = (buf + 1) >> 1;
-    else
-        buf = -(buf >> 1);
+	else
+	{
+	//	buf = -(buf >> 1);
+	}
 
     return buf;
 }
@@ -255,7 +259,7 @@ static inline int svq3_get_se_golomb(GetBitContext *gb)
         LAST_SKIP_BITS(re, gb, 63 - 2 * log - 8);
         CLOSE_READER(re, gb);
 
-        return (signed) (((((buf << log) >> log) - 1) ^ -(buf & 0x1)) + 1) >> 1;
+		return 0;// (signed)(((((buf << log) >> log) - 1) ^ -(buf & 0x1)) + 1) >> 1;
     }
 }
 

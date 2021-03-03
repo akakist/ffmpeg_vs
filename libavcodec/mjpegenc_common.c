@@ -283,7 +283,7 @@ void ff_mjpeg_escape_FF(PutBitContext *pb, int start)
     int size;
     int i, ff_count;
     uint8_t *buf = pb->buf + start;
-    int align= (-(size_t)(buf))&3;
+	int align = 0;// (-(size_t)(buf)) & 3;
     int pad = (-put_bits_count(pb))&7;
 
     if (pad)

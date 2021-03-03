@@ -245,7 +245,7 @@ static void qtrle_encode_line(QtrleEncContext *s, const AVFrame *p, int line, ui
         if (repeatcount > 1 && (skipcount == 0 || total_repeat_cost < total_skip_cost)) {
             /* repeat is the best */
             s->length_table[i]  = total_repeat_cost;
-            s->rlecode_table[i] = -repeatcount;
+//            s->rlecode_table[i] = -repeatcount;
         }
         else if (skipcount > 0) {
             /* skip is the best choice here */

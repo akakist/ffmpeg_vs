@@ -62,7 +62,7 @@ typedef struct AVDVProfile {
 /**
  * @deprecated use av_dv_frame_profile()
  */
-attribute_deprecated
+
 const AVDVProfile* avpriv_dv_frame_profile2(AVCodecContext* codec, const AVDVProfile *sys,
                                             const uint8_t* frame, unsigned buf_size);
 #endif

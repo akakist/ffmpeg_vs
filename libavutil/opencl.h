@@ -33,7 +33,7 @@
 #define LIBAVUTIL_OPENCL_H
 
 #include "config.h"
-#define HAVE_CL_CL_H 1
+//#define HAVE_CL_CL_H 1
 #if HAVE_CL_CL_H
 #include <CL/cl.h>
 #else

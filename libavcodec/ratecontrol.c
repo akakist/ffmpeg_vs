@@ -1,3 +1,4 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
 /*
  * Rate control for video encoders
  *

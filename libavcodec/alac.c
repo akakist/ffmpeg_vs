@@ -125,7 +125,7 @@ static int rice_decompress(ALACContext *alac, int32_t *output_buffer,
         x = decode_scalar(&alac->gb, k, bps);
         x += sign_modifier;
         sign_modifier = 0;
-        output_buffer[i] = (x >> 1) ^ -(x & 1);
+//        output_buffer[i] = (x >> 1) ^ -(x & 1);
 
         /* update the history */
         if (x > 0xffff)

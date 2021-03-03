@@ -20,6 +20,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
  */
 
+#define  _CRT_SECURE_NO_WARNINGS 1
+
 #define UNCHECKED_BITSTREAM_READER 1
 
 #include "libavutil/opt.h"
@@ -560,10 +562,10 @@ static inline int mpeg4_decode_dc(MpegEncContext *s, int n, int *dir_ptr)
             if (code == 1)
                 level = 2 * get_bits1(&s->gb) - 1;
             else {
-                if (get_bits1(&s->gb))
-                    level = get_bits(&s->gb, code - 1) + (1 << (code - 1));
-                else
-                    level = -get_bits(&s->gb, code - 1) - (1 << (code - 1));
+				if (get_bits1(&s->gb))
+					level = get_bits(&s->gb, code - 1) + (1 << (code - 1));
+				else
+					level = 0;// -get_bits(&s->gb, code - 1) - (1 << (code - 1));
             }
         } else {
             level = get_xbits(&s->gb, code);

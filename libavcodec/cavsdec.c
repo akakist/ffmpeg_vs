@@ -566,7 +566,7 @@ static int decode_residual_block(AVSContext *h, GetBitContext *gb,
             level    = esc_code + (run > r->max_run ? 1 : r->level_add[run]);
             while (level > r->inc_limit)
                 r++;
-            mask  = -(level_code & 1);
+//            mask  = -(level_code & 1);
             level = (level ^ mask) - mask;
         } else {
             level = r->rltab[level_code][0];

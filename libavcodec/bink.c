@@ -349,7 +349,7 @@ static int read_motion_values(AVCodecContext *avctx, GetBitContext *gb, Bundle *
     if (get_bits1(gb)) {
         v = get_bits(gb, 4);
         if (v) {
-            sign = -get_bits1(gb);
+//            sign = -get_bits1(gb);
             v = (v ^ sign) - sign;
         }
         memset(b->cur_dec, v, t);
@@ -358,7 +358,7 @@ static int read_motion_values(AVCodecContext *avctx, GetBitContext *gb, Bundle *
         while (b->cur_dec < dec_end) {
             v = GET_HUFF(gb, b->tree);
             if (v) {
-                sign = -get_bits1(gb);
+//                sign = -get_bits1(gb);
                 v = (v ^ sign) - sign;
             }
             *b->cur_dec++ = v;
@@ -475,7 +475,7 @@ static int read_dcs(AVCodecContext *avctx, GetBitContext *gb, Bundle *b,
     CHECK_READ_VAL(gb, b, len);
     v = get_bits(gb, start_bits - has_sign);
     if (v && has_sign) {
-        sign = -get_bits1(gb);
+//        sign = -get_bits1(gb);
         v = (v ^ sign) - sign;
     }
     if (dst_end - dst < 1)
@@ -491,7 +491,7 @@ static int read_dcs(AVCodecContext *avctx, GetBitContext *gb, Bundle *b,
             for (j = 0; j < len2; j++) {
                 v2 = get_bits(gb, bsize);
                 if (v2) {
-                    sign = -get_bits1(gb);
+//                    sign = -get_bits1(gb);
                     v2 = (v2 ^ sign) - sign;
                 }
                 v += v2;
@@ -647,7 +647,7 @@ static int read_dct_coeffs(GetBitContext *gb, int32_t block[64], const uint8_t *
                             t = 1 - (get_bits1(gb) << 1);
                         } else {
                             t = get_bits(gb, bits) | 1 << bits;
-                            sign = -get_bits1(gb);
+//                            sign = -get_bits1(gb);
                             t = (t ^ sign) - sign;
                         }
                         block[scan[ccoef]] = t;
@@ -668,7 +668,7 @@ static int read_dct_coeffs(GetBitContext *gb, int32_t block[64], const uint8_t *
                     t = 1 - (get_bits1(gb) << 1);
                 } else {
                     t = get_bits(gb, bits) | 1 << bits;
-                    sign = -get_bits1(gb);
+//                    sign = -get_bits1(gb);
                     t = (t ^ sign) - sign;
                 }
                 block[scan[ccoef]] = t;
@@ -758,7 +758,7 @@ static int read_residue(GetBitContext *gb, int16_t block[64], int masks_count)
                         mode_list[  list_start] = 3;
                     } else {
                         nz_coeff[nz_coeff_count++] = bink_scan[ccoef];
-                        sign = -get_bits1(gb);
+//                        sign = -get_bits1(gb);
                         block[bink_scan[ccoef]] = (mask ^ sign) - sign;
                         masks_count--;
                         if (masks_count < 0)
@@ -776,7 +776,7 @@ static int read_residue(GetBitContext *gb, int16_t block[64], int masks_count)
                 break;
             case 3:
                 nz_coeff[nz_coeff_count++] = bink_scan[ccoef];
-                sign = -get_bits1(gb);
+                //sign = -get_bits1(gb);
                 block[bink_scan[ccoef]] = (mask ^ sign) - sign;
                 coef_list[list_pos]   = 0;
                 mode_list[list_pos++] = 0;

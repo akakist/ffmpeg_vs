@@ -1,3 +1,4 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
 /*
  * SubRip subtitle decoder
  * Copyright (c) 2010  Aurelien Jacobs <aurel@gnuage.org>

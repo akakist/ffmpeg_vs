@@ -21,7 +21,7 @@
 #ifndef AVUTIL_LOG_H
 #define AVUTIL_LOG_H
 
-#define snprintf _snprintf
+//#define snprintf _snprintf
 #define avpriv_strtod _strtod
 
 #include <stdarg.h>

@@ -505,10 +505,10 @@ static inline int ape_decode_value_3860(APEContext *ctx, GetBitContext *gb,
         rice->k++;
 
     /* Convert to signed */
-    if (x & 1)
-        return (x >> 1) + 1;
-    else
-        return -(x >> 1);
+	if (x & 1)
+		return (x >> 1) + 1;
+	else
+		return 0;// -(x >> 1);
 }
 
 static inline int ape_decode_value_3900(APEContext *ctx, APERice *rice)
@@ -542,10 +542,10 @@ static inline int ape_decode_value_3900(APEContext *ctx, APERice *rice)
     update_rice(rice, x);
 
     /* Convert to signed */
-    if (x & 1)
-        return (x >> 1) + 1;
-    else
-        return -(x >> 1);
+	if (x & 1)
+		return (x >> 1) + 1;
+	else
+		return 0;// -(x >> 1);
 }
 
 static inline int ape_decode_value_3990(APEContext *ctx, APERice *rice)
@@ -588,10 +588,10 @@ static inline int ape_decode_value_3990(APEContext *ctx, APERice *rice)
     update_rice(rice, x);
 
     /* Convert to signed */
-    if (x & 1)
-        return (x >> 1) + 1;
-    else
-        return -(x >> 1);
+	if (x & 1)
+		return (x >> 1) + 1;
+	else
+		return 0;// -(x >> 1);
 }
 
 static void decode_array_0000(APEContext *ctx, GetBitContext *gb,

@@ -1734,9 +1734,9 @@ decode_cabac_residual_internal(H264Context *h, int16_t *block,
     } while ( coeff_count );
 
     if (h->pixel_shift) {
-        STORE_BLOCK(int32_t)
+        //STORE_BLOCK(int32_t)
     } else {
-        STORE_BLOCK(int16_t)
+//        STORE_BLOCK(int16_t)
     }
 #ifdef CABAC_ON_STACK
             h->cabac.range     = cc.range     ;

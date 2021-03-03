@@ -439,7 +439,7 @@ int av_opt_show2(void *obj, void *av_log_obj, int req_flags, int rej_flags);
 void av_opt_set_defaults(void *s);
 
 #if FF_API_OLD_AVOPTIONS
-attribute_deprecated
+
 void av_opt_set_defaults2(void *s, int mask, int flags);
 #endif
 

@@ -591,7 +591,7 @@ static int x8_decode_intra_mb(IntraX8Context* const w, const int chroma){
             level= (level+1) * w->dquant;
             level+= w->qsum;
 
-            sign = - get_bits1(&s->gb);
+//            sign = - get_bits1(&s->gb);
             level = (level ^ sign) - sign;
 
             if(use_quant_matrix){

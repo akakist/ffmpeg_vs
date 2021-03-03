@@ -1,3 +1,4 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
 /*
  * DivX (XSUB) subtitle encoder
  * Copyright (c) 2005 DivX, Inc.

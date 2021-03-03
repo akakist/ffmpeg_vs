@@ -24,6 +24,7 @@
  * H.264 / AVC / MPEG4 part10 sei decoding.
  * @author Michael Niedermayer <michaelni@gmx.at>
  */
+#define  _CRT_SECURE_NO_WARNINGS 1
 
 #include "avcodec.h"
 #include "golomb.h"

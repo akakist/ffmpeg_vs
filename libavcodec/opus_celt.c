@@ -1283,7 +1283,7 @@ static inline uint64_t celt_cwrsi(unsigned int N, unsigned int K, unsigned int i
     *y++  = val;
 
     /* N==1 */
-    s     = -i;
+    //s     = -i;
     val   = (K + s) ^ s;
     norm += val * val;
     *y    = val;

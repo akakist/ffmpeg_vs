@@ -244,7 +244,7 @@ static int wavesynth_parse_extradata(AVCodecContext *avc)
     uint8_t *edata, *edata_end;
     int32_t f1, f2, a1, a2;
     uint32_t phi;
-    int64_t dphi1, dphi2, dt, cur_ts = -0x8000000000000000;
+    int64_t dphi1, dphi2, dt, cur_ts = 0x8000000000000000;
     int i;
 
     if (avc->extradata_size < 4)

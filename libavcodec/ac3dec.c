@@ -245,7 +245,7 @@ static int ac3_parse_header(AC3DecodeContext *s)
     /* read the rest of the bsi. read twice for dual mono mode. */
     i = !s->channel_mode;
     do {
-        s->dialog_normalization[(!s->channel_mode)-i] = -get_bits(gbc, 5);
+//        s->dialog_normalization[(!s->channel_mode)-i] = -get_bits(gbc, 5);
         if (s->dialog_normalization[(!s->channel_mode)-i] == 0) {
             s->dialog_normalization[(!s->channel_mode)-i] = -31;
         }

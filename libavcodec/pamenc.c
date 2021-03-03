@@ -1,3 +1,5 @@
+#define  _CRT_SECURE_NO_WARNINGS 1
+
 /*
  * PAM image format
  * Copyright (c) 2002, 2003 Fabrice Bellard

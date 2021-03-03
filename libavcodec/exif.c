@@ -24,6 +24,7 @@
  * EXIF metadata parser
  * @author Thilo Borgmann <thilo.borgmann _at_ mail.de>
  */
+#define  _CRT_SECURE_NO_WARNINGS 1
 
 #include "exif.h"
 
